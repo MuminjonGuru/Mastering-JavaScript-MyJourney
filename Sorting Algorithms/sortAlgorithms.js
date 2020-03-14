@@ -1,4 +1,5 @@
-// insertion sort
+// insertion sort = O n squared
+// if it is sorted it can be O(n)
 var insertionSort = nums => {
   for(let i = 1; i < nums.length; i++) {
     for(let j = 0; j < 1; j++) {
