@@ -27,6 +27,26 @@ const merge = (left, right) => {
 };
 
 
+// quick sort - O(n log n)
+// takes up less memory than mergesort so it is often favored.
+const quickSort = nums => {
+  if(nums.length <= 1) return nums;
+
+  const pivot = nums[nums.length-1];
+  const left = [];
+  const right = [];
+
+  for(let i=0; i < nums.length - 1; i++) {
+    if(nums[i] < pivot) {
+      left.push(nums[i]);
+    } else {
+      right.push(nums[i]);
+    }
+  }
+  return [...quickSort(left), pivot, ...quickSort(right)];
+};
+
+
 // insertion sort = O n squared
 // if it is sorted it can be O(n)
 var insertionSort = nums => {
