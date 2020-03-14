@@ -1,3 +1,32 @@
+// Merge Sort - O(n log n) complexity
+// because we have to compare everything once. but we don't have to compare everything to everything like we do with bubble sort.
+const mergeSort = nums => {
+  if(nums.length < 2) {
+    return nums;
+  }
+
+  const length = nums.length;
+  const middle = Math.floor(length / 2);
+  const left = nums.slice(0, middle);
+  const right = nums.slice(middle);
+
+  return merge(mergeSort(left), mergeSort(right));
+};
+
+const merge = (left, right) => {
+  const results = [];
+  while(left.length && right.length) {
+    if(left[0] <= right[0]) {
+      results.push(left.shift());
+    } else {
+      results.push(right.shift());
+    }
+  }
+
+  return results.concat(left, right);
+};
+
+
 // insertion sort = O n squared
 // if it is sorted it can be O(n)
 var insertionSort = nums => {
