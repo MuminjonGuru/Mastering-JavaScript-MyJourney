@@ -10,10 +10,7 @@ class ArrayList {
   }
 
   pop() {
-    const ans = this.data[this.length-1];
-    delete this.data[this.length-1];
-    this.length--;
-    return ans;
+    return this.delete(this.length-1);
   }
 
   get(index) {
