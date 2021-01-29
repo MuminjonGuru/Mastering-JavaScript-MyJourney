@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Four in a Row with Treehouse</title>
+        <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+    </head>
+
+    <body>
+		
+		<!-- 
+			Start Game Button
+			When a player clicks this button, the game will begin
+		-->
+    	<button id = "begin-game">
+    		Start
+    	</button>
+    
+	
+		<!-- 
+			#game-scene: container for entire play area
+			#play-area: container for the board
+			.stand-container: the board's vertical support stands
+		-->
+    	<div id = "game-scene">
+            <div id = "play-area">
+                <div class = "stand-container left">
+                    <div class = "stand-leg">
+                    </div>
+        
+                    <div class = "stand-foot">
+                    </div>
+        
+                    <div class = "stand-attachment left">
+                    </div>
+                </div>
+
+
+				<!--
+					#game-over will eventually display a game over message to the players
+				-->
+        		<div id = "game-over">
+        		</div>
+            
+            
+				<!--
+					#game-board-underlay: container for HTML tokens
+				-->
+                <div id = "game-board-underlay">
+                    <div id = "token" data-column = "0">
+                    </div>
+                </div>
+            
+			
+				<!-- 
+					SVGs were used to create the board and the "holes" for the Spaces
+				-->
+            	<svg id = "game-board">
+                    <defs>
+						<!--
+							#mask: container for Space SVGs 
+						-->
+                        <mask id="mask" x="0" y="0" width="548" height="472">
+                            <rect x = "0" y = "0" height = "472" width = "548" fill = "white">
+                        </mask>
+                    </defs>
+                    
+                    <rect id = "board-back" x="0" y="0" width="548" height="472" mask="url(#mask)" fill-opacity = "1" fill = "#5FCF80"/>
+            	</svg>
+    
+				<!-- 
+					.stand-container: the board's vertical support stands
+				-->
+                <div class = "stand-container right">
+                    <div class = "stand-leg">
+                    </div>
+        
+                    <div class = "stand-foot">
+                    </div>
+        
+                    <div class = "stand-attachment right">
+                    </div>
+                </div>
+        
+                <div style = "clear:both"></div>
+            </div>
+        </div>
+    
+	
+		<!-- 
+			.table: so the board doesn't look like it's floating
+		-->
+        <div class = "table">
+        </div>
+    </body>
+</html>
+
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src = "js/Game.js"></script>
+<script src = "js/Board.js"></script>
+<script src = "js/Space.js"></script>
+<script src = "js/Player.js"></script>
+<script src = "js/Token.js"></script>
+<script src = "js/app.js"></script>
+
+
+
